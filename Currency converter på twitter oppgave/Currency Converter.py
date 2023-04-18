@@ -3,13 +3,13 @@ from datetime import datetime
 import schedule
 import tweepy
 
-#Twitter tokens til brukeren sånt at jeg kan poste på twitter med den twitter brukeren
+#Twitter tokens til brukeren sånt at jeg kan poste på twitter med twitter brukeren min
 auth=tweepy.OAuthHandler('API-Key', 'API-Secret')
 auth.set_access_token('Access-Token', 'Access-Secret')
 api=tweepy.API(auth)
 
 def job():
-    #Finner ut hvor mye 1 USD er i NOK, og runder av til 5 desimaler
+    #Finner ut hvor mye 1 USD er i NOK, og runder opp til 5 desimaler
     currency=CurrencyRates()
     norskeKronen=round(currency.get_rate('USD', 'NOK'),5)
 
